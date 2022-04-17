@@ -1,3 +1,30 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
 .App {
   text-align: center;
+  border: 1px red solid;
+  margin: 20px;
+  width: 80%;
+  padding: 20px;
+}
+.listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.ml {
+  margin-left: 5px;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 5px;
+}
+.mt {
+  margin-top: 10px;
 }
