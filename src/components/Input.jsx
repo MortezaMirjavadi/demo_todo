@@ -1,10 +1,12 @@
 import {useState} from 'react';
+import {useTodoContext} from '../context/useTodoContext';
 
-export default function Input({onAdd}) {
+export default function Input() {
+  const {addTodo} = useTodoContext();
   const [value, setValue] = useState('');
 
   function handleAddItems() {
-    onAdd(value);
+    addTodo(value);
   }
 
   return (

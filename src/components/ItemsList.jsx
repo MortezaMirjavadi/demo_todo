@@ -1,11 +1,16 @@
 import ListItem from './ListItem';
+import {useTodoContext} from '../context/useTodoContext';
 
-export default function ItemsList({items, removeTodo}) {
+export default function ItemsList() {
+  const {
+    state: {todos},
+  } = useTodoContext();
+
   return (
     <div className="listContainer">
-      {items.length > 0 &&
-        items.map(item => {
-          return <ListItem key={item.id} data={item} removeTodo={removeTodo} />;
+      {todos.length > 0 &&
+        todos.map(item => {
+          return <ListItem key={item.id} data={item} />;
         })}
     </div>
   );

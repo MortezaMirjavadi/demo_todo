@@ -1,4 +1,7 @@
-export default function ListItem({data: {id, todo}, removeTodo}) {
+import {useTodoContext} from '../context/useTodoContext';
+
+export default function ListItem({data: {id, todo}}) {
+  const {removeTodo} = useTodoContext();
   return (
     <div className="listItem">
       <div className="todo_content">{todo}</div>
