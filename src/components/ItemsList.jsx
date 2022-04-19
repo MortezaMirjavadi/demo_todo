@@ -9,9 +9,7 @@ export default function ItemsList() {
   return (
     <div className="listContainer">
       {todos.length > 0 &&
-        todos.map(item => {
-          return <ListItem key={item.id} data={item} />;
-        })}
+        todos.map(item => <ListItem key={item.id} data={item} />)}
     </div>
   );
 }
