@@ -4,7 +4,17 @@ import './App.css';
 import Input from './components/Input';
 import TodoProvider from './context/useTodoContext';
 
+function init() {
+  console.log('initialized');
+  return {
+    name: 'Peter',
+  };
+}
+
 function App() {
+  const [state, setState] = useState(init());
+  console.log(state);
+
   return (
     <TodoProvider>
       <div className="App">

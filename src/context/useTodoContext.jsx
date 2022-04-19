@@ -42,9 +42,18 @@ function TodoProvider({children}) {
 
   const value = {state, dispatch, addTodo, removeTodo};
 
+  if (!TodoContext) {
+    throw new Error('TodoContext is not defined');
+  }
+
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 }
-const useTodoContext = () => useContext(TodoContext);
+const useTodoContext = () => {
+  if (!TodoContext) {
+    throw new Error('TodoContext is not defined');
+  }
+  return useContext(TodoContext);
+};
 
 export default TodoProvider;
 
